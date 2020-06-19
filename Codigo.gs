@@ -14,7 +14,7 @@ function onOpen() {
 function getUserInfo() {
   const url = 'https://api.clockify.me/api/v1/user';
   const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
-  let sheet = spreadsheet.getSheetByName("DATOS");
+  let sheetData = spreadsheet.getSheetByName("DATOS");
   const token = sheetData.getRange('DATOS!$B$1').getValue();
   var options = {
     'method' : 'GET',
@@ -30,17 +30,17 @@ function getUserInfo() {
   let id = jsonResponse.id;
   let arryProyect =  jsonResponse.memberships;
   let activeWorkspace = jsonResponse.activeWorkspace;
-  sheet.getRange(3 ,2 ,4 ,1).setValues([ [ name], [email], [id], [activeWorkspace] ]);
+  sheetData.getRange(3 ,2 ,4 ,1).setValues([ [ name], [email], [id], [activeWorkspace] ]);
   getWorkspaces();
 }
 
 /*GET ALL PROYECT FROM A USER*/
 function getWorkspaces (){
   const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
-  let sheet = spreadsheet.getSheetByName("DATOS");
+  let sheetData = spreadsheet.getSheetByName("DATOS");
   const token = sheetData.getRange('DATOS!$B$1').getValue();
-  const workspaceId = sheet.getRange(6, 2).getValue();
-  deleteOldData(sheet,9,sheet.getLastRow()-8);
+  const workspaceId = sheetData.getRange(6, 2).getValue();
+  deleteOldData(sheetData,9,sheetData.getLastRow()-8);
   try {
     const url = 'https://api.clockify.me/api/v1/workspaces/'+workspaceId+'/projects'; 
     var options = {
@@ -186,11 +186,6 @@ function stored(){
   const range1 = sheetStore.getRange('CARGA!$A$5:$B$18').setValue('').setBackground('white');
   const range2 = sheetStore.getRange('CARGA!$D$5:$E$18').setValue('').setBackground('white');
   let lastRow2 = sheetStore.getLastRow();
- 
   sheetStore.getRange(lastRow1 + 1, 1, lastRow2-lastRow1).setValue(date);
-  const range3 = sheetStore.getRange('CARGA!$C$5:$C$18').setBackground('white');
-  
-  
+  const range3 = sheetStore.getRange('CARGA!$C$5:$C$18').setBackground('white'); 
 }
-
-
