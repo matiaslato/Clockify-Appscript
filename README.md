@@ -26,5 +26,5 @@ configuración
 
 10)Desde el menú "acciones" de la planilla de calculo ejecutar la función "Enviar tareas". Luego de este paso ya podremos visualisar las tareas en la web de clockify.
 
-11)Desde el menú "acciones" de la planilla de calculo ejecutar la función "Archivar".
+11)Desde el menú "acciones" de la planilla de calculo ejecutar la función "Archivar". (feature pendiente)
 
