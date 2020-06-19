@@ -7,9 +7,13 @@ Fetch task to clockify api from google sheet
 configuración 
 
 1)Generar la API-KEY de clockify desde el panel administración de tu cuenta clockify
+
 2)Establecer el time format en 24-hs (NO requerido/Recomendable).
+
 3)Pegar esa key en la hoja datos celda B2
+
 4)Desde el menú "acciones" de la planilla de calculo ejecutar la función "Datos del usuario".
+
 5)Seleccionar en la hoja datos el pais desde donde ejecutará el script, Ecuador o Argentina. (Proximamente se modificará este paso)
 6)En la hoja carga ingresar la fecha en la que pretende cargar la tarea formato dd/MM/aaaa (REQUERIDO)
 7)Inresar hora inicio y fin de la tarea formato hh:mm (REQUERIDO)
