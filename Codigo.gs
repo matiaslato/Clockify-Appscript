@@ -171,3 +171,26 @@ function vlookup(sheet, column, index, value){
     }
   }
 }
+
+function stored(){
+  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  const sheetData = spreadsheet.getSheetByName("DATOS");
+  const sheetCarga = spreadsheet.getSheetByName("CARGA");
+  const sheetStore = spreadsheet.getSheetByName("ARCHIVO");
+  const values = sheetStore.getRange('CARGA!$A$5:$E$18').getValues();
+  let lastRow1 = sheetStore.getLastRow();
+  let date = sheetCarga.getRange('CARGA!$B$1').getValue(); 
+  date = Utilities.formatDate(date, "GMT","yyyy-MM-dd"); //2020-06-18
+  sheetStore.getRange(lastRow1 + 1, 2, values.length, values[0].length).setValues(values);
+  
+  const range1 = sheetStore.getRange('CARGA!$A$5:$B$18').setValue('').setBackground('white');
+  const range2 = sheetStore.getRange('CARGA!$D$5:$E$18').setValue('').setBackground('white');
+  let lastRow2 = sheetStore.getLastRow();
+ 
+  sheetStore.getRange(lastRow1 + 1, 1, lastRow2-lastRow1).setValue(date);
+  const range3 = sheetStore.getRange('CARGA!$C$5:$C$18').setBackground('white');
+  
+  
+}
+
+
