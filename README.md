@@ -15,5 +15,5 @@ configuración:
 9.	Seleccionar el proyecto del únicamente del menú desplegable. (REQUERIDO)
 10.	Agregar la descripción de la tarea. (REQUERIDO)
 11.	Desde el menú "acciones" de la planilla de cálculo ejecutar la función "Enviar tareas". Luego de este paso ya podremos visualizar las tareas en la web de clockify.
-12.	Desde el menú "acciones" de la planilla de cálculo ejecutar la función "Archivar". (feature pendiente)
+12.	Desde el menú "acciones" de la planilla de cálculo ejecutar la función "Archivar".
 
